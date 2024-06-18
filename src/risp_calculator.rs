@@ -6,7 +6,7 @@ use std::{fmt, io};
 type RResult<Value> = Result<Value, RispErr>;
 type RRResult = RResult<RispExpr>;
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq, Debug)]
 enum RispExpr {
     Boolean(bool),
     Symbol(String),
@@ -16,13 +16,13 @@ enum RispExpr {
     Lambda(RispLambda),
 }
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq, Debug)]
 struct RispLambda {
     params: Rc<RispExpr>,
     body: Rc<RispExpr>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 enum RispErr {
     Reason(String),
 }
@@ -347,5 +347,24 @@ pub(crate) fn main() {
             }
             Err(RispErr::Reason(message)) => println!("// 😱 => {}", message),
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn dynamic_scope() {
+        let mut env = Default::default();
+        let def1 = "(define add-y (lambda (x) (+ 1 y)))";
+        let def2 = "(define y 10)";
+        let exp2 = "(add-y 2)";
+        assert!(parse_eval(def1.to_string(), &mut env).is_ok());
+        assert!(parse_eval(def2.to_string(), &mut env).is_ok());
+        assert_eq!(
+            parse_eval(exp2.to_string(), &mut env),
+            Ok(RispExpr::Number(11_f64))
+        );
     }
 }
