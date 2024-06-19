@@ -1,4 +1,4 @@
-use crate::simple_lisp::data::RResult;
+use crate::dynamic_lisp::data::RResult;
 
 #[derive(Debug, PartialEq)]
 pub enum RispErr {

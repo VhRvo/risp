@@ -1,8 +1,8 @@
-use crate::simple_lisp::data::{RRResult, RResult, RispExpr, RispLambda};
-use crate::simple_lisp::environment::RispEnv;
-use crate::simple_lisp::error::RispErr::Reason;
-use crate::simple_lisp::error::{error, RispErr};
-use crate::simple_lisp::parser::parse_list_of_symbol_strings;
+use crate::dynamic_lisp::data::{RRResult, RResult, RispExpr, RispLambda};
+use crate::dynamic_lisp::environment::RispEnv;
+use crate::dynamic_lisp::error::RispErr::Reason;
+use crate::dynamic_lisp::error::{error, RispErr};
+use crate::dynamic_lisp::parser::parse_list_of_symbol_strings;
 
 use std::collections::HashMap;
 use std::rc::Rc;

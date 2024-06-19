@@ -1,7 +1,7 @@
-use crate::simple_lisp::data::{RResult, RispExpr};
-use crate::simple_lisp::error;
-use crate::simple_lisp::error::RispErr::Reason;
-use crate::simple_lisp::error::{error, RispErr};
+use crate::dynamic_lisp::data::{RResult, RispExpr};
+use crate::dynamic_lisp::error;
+use crate::dynamic_lisp::error::RispErr::Reason;
+use crate::dynamic_lisp::error::{error, RispErr};
 
 use std::rc::Rc;
 

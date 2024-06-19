@@ -1,7 +1,7 @@
-use crate::simple_lisp::data::RRResult;
-use crate::simple_lisp::data::RispExpr;
-use crate::simple_lisp::error::RispErr;
-use crate::simple_lisp::parser::parse_list_of_floats;
+use crate::dynamic_lisp::data::RRResult;
+use crate::dynamic_lisp::data::RispExpr;
+use crate::dynamic_lisp::error::RispErr;
+use crate::dynamic_lisp::parser::parse_list_of_floats;
 
 use std::collections::HashMap;
 

@@ -1,17 +1,17 @@
-use crate::simple_lisp::data::RRResult;
-use crate::simple_lisp::environment::RispEnv;
-use crate::simple_lisp::error::RispErr::Reason;
-use crate::simple_lisp::interpreter::eval;
-use crate::simple_lisp::parser::{parse, tokenize};
+use crate::dynamic_lisp::data::RRResult;
+use crate::dynamic_lisp::environment::RispEnv;
+use crate::dynamic_lisp::error::RispErr::Reason;
+use crate::dynamic_lisp::interpreter::eval;
+use crate::dynamic_lisp::parser::{parse, tokenize};
 
 use std::io;
 
-pub mod data;
-pub mod environment;
-pub mod error;
-pub mod interpreter;
-pub mod parser;
-pub mod printer;
+mod data;
+mod environment;
+mod error;
+mod interpreter;
+mod parser;
+mod printer;
 
 fn parse_eval(expr: String, env: &mut RispEnv) -> RRResult {
     let (parsed_expr, _) = parse(&tokenize(expr))?;
@@ -43,7 +43,7 @@ pub(crate) fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::simple_lisp::data::RispExpr;
+    use crate::dynamic_lisp::data::RispExpr;
 
     #[test]
     fn dynamic_scope() {

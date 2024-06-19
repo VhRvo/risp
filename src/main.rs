@@ -1,5 +1,5 @@
-mod simple_lisp;
+mod dynamic_lisp;
 
 fn main() {
-    simple_lisp::main()
+    dynamic_lisp::main()
 }

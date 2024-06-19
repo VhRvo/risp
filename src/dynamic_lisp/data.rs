@@ -1,4 +1,4 @@
-use crate::simple_lisp::error::RispErr;
+use crate::dynamic_lisp::error::RispErr;
 
 use std::rc::Rc;
 

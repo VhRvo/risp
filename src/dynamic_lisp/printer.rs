@@ -1,4 +1,4 @@
-use crate::simple_lisp::data::RispExpr;
+use crate::dynamic_lisp::data::RispExpr;
 
 use std::fmt;
 
