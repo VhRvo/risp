@@ -1,5 +1,5 @@
-mod risp_calculator;
+mod simple_lisp;
 
 fn main() {
-    risp_calculator::main()
+    simple_lisp::main()
 }
